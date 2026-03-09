@@ -117,7 +117,6 @@ def main() -> None:
     for reason in reasons:
         st.markdown(f"- {reason}")
 
-    st.markdown("## Risk Component Breakdown")
     breakdown = pd.DataFrame(
         [
             ["Vessel Risk", vessel["vessel_risk_score"]],
@@ -129,6 +128,42 @@ def main() -> None:
         ],
         columns=["Component", "Score"],
     )
+
+    st.markdown("## Download Underwriting Report")
+    report_lines = [
+        "Shipment Risk Underwriting Report",
+        "-------------------------------",
+        f"Shipment ID: {shipment['shipment_id']}",
+        f"Origin: {shipment['origin_port']}",
+        f"Destination: {shipment['destination_port']}",
+        f"Cargo Type: {shipment['cargo_type']}",
+        f"Cargo Value (USD): ${shipment['cargo_value_usd']:,.0f}",
+        f"Vessel: {vessel['vessel_name']}",
+        f"IMO: {vessel['imo']}",
+        f"Vessel Age: {vessel['age']} years",
+        f"PSC Deficiencies: {vessel['psc_deficiencies']}",
+        f"Last Detention: {vessel['last_detention']}",
+        f"Risk Score: {risk_result['total_score']}",
+        f"Risk Level: {risk_result['risk_level']}",
+        f"Delay Probability: {risk_result['delay_probability']}%",
+        f"Damage Probability: {risk_result['damage_probability']}%",
+        "",
+        "Key Risk Drivers:",
+    ]
+    report_lines.extend(f"- {reason}" for reason in reasons)
+    report_lines.append("")
+    report_lines.append("Risk Component Breakdown:")
+    report_lines.extend(f"- {row['Component']}: {row['Score']}" for _, row in breakdown.iterrows())
+    report_text = "\n".join(report_lines)
+
+    st.download_button(
+        "Download Underwriting Report",
+        data=report_text,
+        file_name=f"{shipment['shipment_id']}_underwriting_report.txt",
+        mime="text/plain",
+    )
+
+    st.markdown("## Risk Component Breakdown")
     st.dataframe(breakdown, use_container_width=True)
 
     st.markdown("## Shipment Route Map")
