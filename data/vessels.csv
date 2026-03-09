@@ -1,0 +1,7 @@
+vessel_name,imo,age,psc_deficiencies,last_detention,vessel_type,vessel_risk_score
+MSC Aurora,9387421,21,2,No,Container,24
+Maersk Horizon,9456123,8,0,No,Container,8
+COSCO Pioneer,9523456,15,1,No,Container,15
+Ocean Titan,9678912,23,3,Yes,Bulk,30
+Blue Wind,9712345,10,0,No,Project Cargo,10
+Atlantic Bridge,9789012,18,1,No,Heavy Lift,18

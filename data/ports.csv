@@ -1,0 +1,7 @@
+port_name,country,lat,lon,congestion_level,port_risk_score
+Shanghai,China,31.2304,121.4737,Medium,12
+Los Angeles,USA,33.7405,-118.2775,High,20
+Rotterdam,Netherlands,51.9244,4.4777,Low,6
+Singapore,Singapore,1.2903,103.8519,Medium,10
+Santos,Brazil,-23.9608,-46.3336,Medium,11
+Jebel Ali,UAE,25.0657,55.1713,Medium,13

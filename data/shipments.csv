@@ -1,0 +1,9 @@
+shipment_id,origin_port,destination_port,cargo_type,cargo_value_usd,vessel_name,route_risk,weather_risk,cargo_risk_score
+SHP001,Shanghai,Los Angeles,Lithium Batteries,5000000,MSC Aurora,12,18,20
+SHP002,Santos,Shanghai,Wind Turbine Components,30000000,Atlantic Bridge,10,12,12
+SHP003,Singapore,Rotterdam,Consumer Electronics,8000000,Maersk Horizon,8,8,8
+SHP004,Jebel Ali,Rotterdam,Chemicals,12000000,Ocean Titan,18,10,18
+SHP005,Shanghai,Singapore,General Cargo,2000000,Blue Wind,6,6,6
+
+SHP006,Santos,Singapore,Offshore Wind Equipment,45000000,Atlantic Bridge,14,15,14
+SHP006,Santos,Singapore,Offshore Wind Equipment,45000000,Atlantic Bridge,14,15,14
